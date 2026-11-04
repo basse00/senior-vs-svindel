@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Læringsarenaen – Senior vs Svindel</title>
+  <script>try { document.documentElement.dataset.tekst = JSON.parse(localStorage.getItem('svs-tekst')) || 'normal'; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+  <a class="hopp" href="#hovedinnhold">Hopp til innholdet</a>
+  <header class="topp">
+    <div class="topp-innhold">
+      <a class="logo" href="index.html"><span aria-hidden="true">🛡️</span> Senior vs Svindel</a>
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html">Forside</a>
+        <a href="test.html">Test deg selv</a>
+        <a href="laering.html">Læringsarenaen</a>
+        <a href="hjelp.html">Få hjelp</a>
+      </nav>
+      <div class="tekststorrelse" role="group" aria-label="Tekststørrelse">
+        <span>Tekst:</span>
+        <button type="button" data-tekstknapp="normal" aria-label="Vanlig tekst">A</button>
+        <button type="button" data-tekstknapp="stor" aria-label="Stor tekst">A+</button>
+        <button type="button" data-tekstknapp="storst" aria-label="Største tekst">A++</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="innhold" id="hovedinnhold">
+    <p class="overtittel">Del 2 av 3</p>
+    <h1>Læringsarenaen</h1>
+    <p class="ingress">Her lærer du å kjenne igjen svindel – ett steg om gangen. Ta den tiden du trenger. Når du er ferdig, kan du ta en ny test.</p>
+
+    <nav class="steg-nav" aria-label="Moduler i læringsarenaen">
+      <button type="button" data-gaa="1">1. Falske nettbutikker</button>
+      <button type="button" data-gaa="2">2. Les nettadressen</button>
+      <button type="button" data-gaa="3">3. KI-bilder</button>
+      <button type="button" data-gaa="4">4. Falske meldinger</button>
+      <button type="button" data-gaa="5">5. Huskeregelen</button>
+    </nav>
+
+    <!-- ===================== MODUL 1 ===================== -->
+    <section class="modul" data-modul="1" aria-labelledby="m1-tittel">
+      <p class="overtittel">Modul 1 av 5</p>
+      <h2 id="m1-tittel">Falske nettbutikker</h2>
+      <p>Svindlere lager nettbutikker som ser helt ekte ut. Med KI tar det bare noen minutter. Målet er å få deg til å skrive inn <b>kortnummeret</b> ditt – varen kommer aldri.</p>
+      <p class="oppgavetekst"><b>Oppgave:</b> Under ser du en falsk nettbutikk. Den har <b>7 tegn på svindel</b>. Trykk på det du synes ser mistenkelig ut.</p>
+
+      <div class="finn-feil">
+        <div class="finn-status-linje">
+          <span class="finn-teller"></span>
+          <span class="finn-status" aria-live="polite">Trykk på det som ser mistenkelig ut.</span>
+        </div>
+        <div class="finn-rutenett">
+          <div class="finn-omrade">
+            <figure class="nettleser" aria-label="Eksempel på falsk nettbutikk">
+              <div class="nettleser-topp">
+                <div class="prikker" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="adressefelt" data-funn="adresse"><span aria-label="Hengelås">🔒</span><span class="url">https://www.fjelltoppsport.no-outlet.shop/salg</span></div>
+              </div>
+              <div class="butikk" style="--merke:#9a2b1f">
+                <div class="b-toppstripe" data-funn="sprak">Gratis frakt til hele norge · Rask levering 3-5 virkedag</div>
+                <div class="b-topp">
+                  <span class="b-logo">⛰️ Fjelltopp Sport</span>
+                  <span class="b-meny"><span>Herre</span><span>Dame</span><span>Ski</span><span>OUTLET</span></span>
+                  <span class="b-kurv" aria-hidden="true">🛒</span>
+                </div>
+                <div class="b-banner">
+                  <h3>Konkurssalg – opptil 85 % rabatt!</h3>
+                  <p>Vi stenger butikken. Alt må ut!</p>
+                  <div class="b-nedtelling" data-funn="stress">⏱ Tilbudet slutter om 00:14:59</div>
+                </div>
+                <div class="b-vurdering" data-funn="vurdering"><span class="stjerner">★★★★★</span> 4,9 av 5 – 12 483 fornøyde kunder</div>
+                <div class="b-produkter">
+                  <div class="b-produkt" data-funn="pris">
+                    <span class="b-merke">-85 %</span>
+                    <div class="b-bilde"><img src="bilder/produkter/skalljakke.jpg" alt=""></div>
+                    <div class="b-pnavn">Skalljakke herre, Gore-Tex</div>
+                    <div class="b-pris"><s>3 499,-</s> <b class="tilbud">525,-</b></div>
+                  </div>
+                  <div class="b-produkt" data-funn="pris">
+                    <span class="b-merke" data-funn="stress">Bare 2 igjen!</span>
+                    <div class="b-bilde"><img src="bilder/produkter/fjellstovler.jpg" alt=""></div>
+                    <div class="b-pnavn">Fjellstøvler, skinn</div>
+                    <div class="b-pris"><s>2 899,-</s> <b class="tilbud">435,-</b></div>
+                  </div>
+                  <div class="b-produkt" data-funn="pris">
+                    <span class="b-merke">-85 %</span>
+                    <div class="b-bilde"><img src="bilder/produkter/langrennsski.jpg" alt=""></div>
+                    <div class="b-pnavn">Langrennsski, komplett sett</div>
+                    <div class="b-pris"><s>4 999,-</s> <b class="tilbud">749,-</b></div>
+                  </div>
+                </div>
+                <div class="b-bunn">
+                  <div data-funn="kontakt">Kontakt: support@fjelltopp-outlet.com</div>
+                  <div data-funn="betaling">Betal med: <span class="b-betal">Visa</span><span class="b-betal">Mastercard</span></div>
+                </div>
+              </div>
+            </figure>
+          </div>
+          <aside class="finn-panel">
+            <h3>Tegn på svindel</h3>
+            <ol class="funn-liste">
+              <li data-for="adresse"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Nettadressen</strong><br>Les slutten: Den egentlige eieren er «no-outlet.shop», ikke Fjelltopp Sport. Svindlere låner navnet til kjente butikker. Hengelåsen betyr <b>ikke</b> at siden er trygg.</span></li>
+              <li data-for="pris"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>For gode priser</strong><br>85 % rabatt på nye merkevarer er urealistisk. Er det for godt til å være sant, er det som regel det.</span></li>
+              <li data-for="stress"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Tidspress</strong><br>Nedtelling og «bare 2 igjen» skal få deg til å handle før du rekker å tenke deg om.</span></li>
+              <li data-for="vurdering"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Stjerner på egen side</strong><br>Butikken kan skrive hva den vil om seg selv. Sjekk heller anmeldelser selv, for eksempel på Trustpilot eller Google.</span></li>
+              <li data-for="betaling"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Bare kortbetaling</strong><br>Ekte norske nettbutikker tilbyr som regel flere betalingsmåter, som Vipps, Klarna eller faktura. Svindlere vil helst ha kortnummeret ditt.</span></li>
+              <li data-for="kontakt"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Mangler kontaktinformasjon</strong><br>Ingen organisasjonsnummer, adresse eller telefon – bare en e-postadresse. En ekte norsk butikk skal oppgi hvem den er.</span></li>
+              <li data-for="sprak"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Små språkfeil</strong><br>«hele norge» og «3-5 virkedag». Men pass på: KI skriver ofte feilfritt, så god norsk betyr <b>ikke</b> at siden er trygg.</span></li>
+            </ol>
+            <button type="button" class="knapp knapp-sekundar vis-alle">Vis meg alle</button>
+          </aside>
+        </div>
+      </div>
+
+      <div class="miniquiz">
+        <p class="mq-etikett">Sjekk deg selv</p>
+        <p class="mq-sporsmal">En nettbutikk har pen design, norsk språk uten feil og 5 stjerner. Betyr det at den er trygg?</p>
+        <div class="mq-valg">
+          <button type="button" class="knapp knapp-valg" data-tilbakemelding="Nei. Pen design, feilfri norsk og stjerner kan svindlere lage på minutter med KI. Sjekk heller adressen, kontaktinformasjonen og betalingsmåtene.">Ja, det ser jo profesjonelt ut.</button>
+          <button type="button" class="knapp knapp-valg" data-riktig data-tilbakemelding="Riktig! Med KI kan hvem som helst lage en flott nettside. Det som avslører svindelen, er ofte adressen, prisene, tidspresset og hva som mangler.">Nei, det kan svindlere også lage. Jeg må sjekke mer.</button>
+        </div>
+        <div class="mq-svar" aria-live="polite"></div>
+      </div>
+
+      <div class="modul-knapper">
+        <span></span>
+        <button type="button" class="knapp knapp-stor" data-neste>Neste: Les nettadressen →</button>
+      </div>
+    </section>
+
+    <!-- ===================== MODUL 2 ===================== -->
+    <section class="modul" data-modul="2" aria-labelledby="m2-tittel" hidden>
+      <p class="overtittel">Modul 2 av 5</p>
+      <h2 id="m2-tittel">Les nettadressen</h2>
+      <p>Nettadressen er det viktigste du kan sjekke. Den er vanskelig å forfalske – men svindlere prøver å <b>gjemme</b> den ekte eieren inni en lang adresse.</p>
+
+      <div class="kort">
+        <h3>Slik finner du eieren av en nettside</h3>
+        <ol class="regel">
+          <li>Finn den første enkle skråstreken <b>/</b> etter <b>https://</b></li>
+          <li>Se på de to siste ordene <b>rett før</b> skråstreken, med punktum mellom.</li>
+          <li>Det er de som forteller hvem som eier siden.</li>
+        </ol>
+      </div>
+
+      <div class="url-eksempel">
+        <p><b>✔ Ekte:</b></p>
+        <div class="url-linje"><span class="del-dempet">https://www.</span><span class="del-eier">nordbanken.no</span><span class="del-dempet">/logg-inn</span></div>
+        <p class="url-merknad">Eieren er <b>nordbanken.no</b>. Det etter skråstreken er bare hvilken side du er på.</p>
+      </div>
+      <div class="url-eksempel">
+        <p><b>✘ Falsk:</b></p>
+        <div class="url-linje"><span class="del-dempet">https://nordbanken.no.</span><span class="del-eier falsk">sikker-innlogging.com</span><span class="del-dempet">/bankid</span></div>
+        <p class="url-merknad">Her står «nordbanken.no» først, men det er bare pynt. Eieren er <b>sikker-innlogging.com</b>.</p>
+      </div>
+
+      <div class="kort varsel-kort">
+        <h3>🔒 Hengelåsen lurer mange</h3>
+        <p>Hengelåsen ved siden av adressen betyr bare at forbindelsen er kryptert. Den sier <b>ingenting</b> om hvem som eier siden. Nesten alle svindelsider har hengelås.</p>
+      </div>
+
+      <h3>Prøv selv: Ekte eller falsk adresse?</h3>
+      <p>Tenk deg at du skal til nettbanken Nordbanken eller fraktselskapet PakkeNorge. Hvilke adresser er ekte?</p>
+      <div class="adresse-oppgaver">
+        <div class="adresse-oppgave" data-url="https://www.nordbanken.no/logg-inn" data-svar="ekte" data-forklaring="Dette er bankens egen adresse."></div>
+        <div class="adresse-oppgave" data-url="https://nordbanken.no.sikker-innlogging.com/bankid" data-svar="falsk" data-forklaring="«nordbanken.no» står først bare for å lure deg."></div>
+        <div class="adresse-oppgave" data-url="https://www.nordbankem.no" data-svar="falsk" data-forklaring="Se nøye: Det står «nordbankem» med m. Svindlere bytter ofte ut én bokstav."></div>
+        <div class="adresse-oppgave" data-url="https://minside.nordbanken.no/oversikt" data-svar="ekte" data-forklaring="Det som står foran (minside.) er bare en del av bankens egen side. Eieren er fortsatt nordbanken.no."></div>
+        <div class="adresse-oppgave" data-url="https://pakkenorge-no.info/betal" data-svar="falsk" data-forklaring="En bindestrek gjør «pakkenorge-no.info» til en helt annen adresse enn pakkenorge.no."></div>
+        <div class="adresse-oppgave" data-url="https://www.pakkenorge.no/spor" data-svar="ekte" data-forklaring="Dette er fraktselskapets egen adresse."></div>
+      </div>
+
+      <div class="kort ok-kort">
+        <h3>💡 Godt tips</h3>
+        <p>Skriv heller inn adressen selv, eller bruk et bokmerke du har lagret. Da slipper du å stole på lenker i meldinger og annonser.</p>
+      </div>
+
+      <div class="modul-knapper">
+        <button type="button" class="knapp knapp-stor knapp-sekundar" data-forrige>← Tilbake</button>
+        <button type="button" class="knapp knapp-stor" data-neste>Neste: KI-bilder →</button>
+      </div>
+    </section>
+
+    <!-- ===================== MODUL 3 ===================== -->
+    <section class="modul" data-modul="3" aria-labelledby="m3-tittel" hidden>
+      <p class="overtittel">Modul 3 av 5</p>
+      <h2 id="m3-tittel">Bilder laget av KI</h2>
+      <p>KI kan lage bilder av produkter, personer og steder som aldri har eksistert. Svindlere bruker dem til å vise varer som ikke finnes, falske «fornøyde kunder» og falske kjendiser som anbefaler produkter.</p>
+      <p class="oppgavetekst"><b>Trykk på hvert kort</b> for å lese hva du skal se etter.</p>
+
+      <div class="tips-rutenett">
+        <details class="tips-kort">
+          <summary><span class="ikon" aria-hidden="true">✋</span> Hender og fingre</summary>
+          <p>KI sliter ofte med hender: for mange eller for få fingre, rare ledd eller fingre som smelter sammen.</p>
+        </details>
+        <details class="tips-kort">
+          <summary><span class="ikon" aria-hidden="true">🔤</span> Tekst i bildet</summary>
+          <p>Se på skilt, etiketter og logoer. I KI-bilder er bokstavene ofte uleselige eller blir til rare tegn.</p>
+        </details>
+        <details class="tips-kort">
+          <summary><span class="ikon" aria-hidden="true">✨</span> For perfekt</summary>
+          <p>Glatt «plasthud», perfekt lys og ingen små feil. Ekte bilder har som regel litt rot, støv og ujevnheter.</p>
+        </details>
+        <details class="tips-kort">
+          <summary><span class="ikon" aria-hidden="true">🏞️</span> Bakgrunnen</summary>
+          <p>Bakgrunnen kan være uskarp på en rar måte, eller ting smelter inn i hverandre. Se etter vinduer, gelendre og mønstre som ikke henger sammen.</p>
+        </details>
+        <details class="tips-kort">
+          <summary><span class="ikon" aria-hidden="true">👓</span> Små detaljer</summary>
+          <p>Øredobber som er ulike, briller som går inn i ansiktet, skygger som går i ulike retninger, eller smykker som er formet rart.</p>
+        </details>
+        <details class="tips-kort">
+          <summary><span class="ikon" aria-hidden="true">🔍</span> Søk på bildet</summary>
+          <p>Med Google Lens (i Google-appen eller Chrome) kan du søke med et bilde. Dukker samme bilde opp i mange ulike butikker, kan det være stjålet eller falskt.</p>
+        </details>
+      </div>
+
+      <div class="kort varsel-kort">
+        <h3>⚠ Viktig: KI blir bedre hele tiden</h3>
+        <p>Mange KI-bilder har ingen av disse feilene lenger. Derfor er det viktigst å sjekke <b>butikken eller avsenderen</b> – ikke bare bildet.</p>
+      </div>
+
+      <div id="bildepar" hidden>
+        <h3>Prøv selv: Hvilket bilde er laget av KI?</h3>
+        <div id="bildepar-liste"></div>
+      </div>
+
+      <div class="miniquiz">
+        <p class="mq-etikett">Sjekk deg selv</p>
+        <p class="mq-sporsmal">Du ser en flott jakke i en nettbutikk. Bildet ser helt perfekt ut, og jakken koster bare 499 kr. Hva er lurest?</p>
+        <div class="mq-valg">
+          <button type="button" class="knapp knapp-valg" data-tilbakemelding="Et fint bilde beviser ingenting. Både KI-bilder og stjålne bilder kan se perfekte ut.">Bildet ser ekte ut, så butikken er nok trygg.</button>
+          <button type="button" class="knapp knapp-valg" data-riktig data-tilbakemelding="Riktig! Bildet alene kan lure deg. Det er butikken du må sjekke.">Sjekke butikken: nettadresse, org.nr., kontaktinformasjon og anmeldelser.</button>
+          <button type="button" class="knapp knapp-valg" data-tilbakemelding="Det er nettopp dette svindlerne vil. Ta deg tid – et ekte tilbud forsvinner ikke på minutter.">Kjøpe raskt før tilbudet forsvinner.</button>
+        </div>
+        <div class="mq-svar" aria-live="polite"></div>
+      </div>
+
+      <div class="modul-knapper">
+        <button type="button" class="knapp knapp-stor knapp-sekundar" data-forrige>← Tilbake</button>
+        <button type="button" class="knapp knapp-stor" data-neste>Neste: Falske meldinger →</button>
+      </div>
+    </section>
+
+    <!-- ===================== MODUL 4 ===================== -->
+    <section class="modul" data-modul="4" aria-labelledby="m4-tittel" hidden>
+      <p class="overtittel">Modul 4 av 5</p>
+      <h2 id="m4-tittel">Falske meldinger</h2>
+      <p>Svindel starter ofte med en SMS eller e-post. Den ser ut til å komme fra posten, banken eller en butikk, og har en lenke til en falsk nettside.</p>
+      <p class="oppgavetekst"><b>Oppgave:</b> Denne SMS-en har <b>5 tegn på svindel</b>. Trykk på det som er mistenkelig.</p>
+
+      <div class="finn-feil">
+        <div class="finn-status-linje">
+          <span class="finn-teller"></span>
+          <span class="finn-status" aria-live="polite">Trykk på det som ser mistenkelig ut.</span>
+        </div>
+        <div class="finn-rutenett">
+          <div class="finn-omrade">
+            <div class="telefon" aria-label="Eksempel på falsk SMS">
+              <div class="t-skjerm">
+                <div class="t-topp">
+                  <div class="t-avatar" aria-hidden="true">P</div>
+                  <div class="t-avsender" data-funn="avsender">PakkeNorge</div>
+                  <div class="t-under">SMS</div>
+                </div>
+                <div class="t-meldinger">
+                  <div class="t-tid">I dag 07:42</div>
+                  <div class="t-boble"><span data-funn="generell">Pakken din</span> er holdt tilbake på grunn av ubetalt tollgebyr på <span data-funn="belop">24,50 kr</span>. <span data-funn="frist">Betal innen 12 timer</span>, ellers sendes pakken i retur: <span class="lenke" data-funn="lenke">https://pakkenorge.gebyr-betaling.com/no</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="finn-panel">
+            <h3>Tegn på svindel</h3>
+            <ol class="funn-liste">
+              <li data-for="avsender"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Avsendernavnet</strong><br>«PakkeNorge» ser ekte ut, men svindlere kan forfalske avsendernavnet. Det beviser ingenting.</span></li>
+              <li data-for="generell"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Ingen detaljer</strong><br>Meldingen sier ikke hvilken butikk pakken er fra. Svindlere sender samme melding til tusenvis av personer.</span></li>
+              <li data-for="belop"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Lite beløp</strong><br>24,50 kr virker ufarlig. Men svindlerne er ute etter kortinformasjonen din – ikke beløpet.</span></li>
+              <li data-for="frist"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Tidspress</strong><br>«Betal innen 12 timer» skal få deg til å handle i hast.</span></li>
+              <li data-for="lenke"><span class="ikke-funnet">Ikke funnet ennå</span><span class="funnet-tekst"><strong>Lenken</strong><br>Eieren av adressen er «gebyr-betaling.com», ikke PakkeNorge. Trykk aldri på lenker i slike meldinger.</span></li>
+            </ol>
+            <button type="button" class="knapp knapp-sekundar vis-alle">Vis meg alle</button>
+          </aside>
+        </div>
+      </div>
+
+      <h3>Andre vanlige svindelmeldinger</h3>
+      <ul class="sjekkliste">
+        <li><b>«Hei mamma/pappa»:</b> «Barnet» ditt har fått nytt nummer og trenger penger. Ring alltid det gamle nummeret.</li>
+        <li><b>«Kontoen din er sperret»:</b> Banken ber deg aldri logge inn via en lenke i SMS eller e-post.</li>
+        <li><b>«Du har vunnet!»:</b> Har du ikke deltatt i noen konkurranse, har du heller ikke vunnet.</li>
+        <li><b>Kjendisannonser:</b> Kjente personer som «anbefaler» investeringer eller produkter på Facebook, er nesten alltid falske – ofte laget med KI.</li>
+      </ul>
+
+      <div class="miniquiz">
+        <p class="mq-etikett">Sjekk deg selv</p>
+        <p class="mq-sporsmal">Du får en SMS fra «banken» om at kontoen din er sperret, med en lenke for å logge inn med BankID. Hva gjør du?</p>
+        <div class="mq-valg">
+          <button type="button" class="knapp knapp-valg" data-tilbakemelding="Nei! Da gir du BankID-en din rett til svindlerne.">Trykker på lenken og logger inn for å åpne kontoen.</button>
+          <button type="button" class="knapp knapp-valg" data-tilbakemelding="Da snakker du med svindleren, som selvfølgelig vil si at meldingen er ekte.">Svarer på SMS-en og spør om det stemmer.</button>
+          <button type="button" class="knapp knapp-valg" data-riktig data-tilbakemelding="Riktig! Ring banken på et nummer du vet er ekte – aldri et nummer fra meldingen.">Ringer banken på nummeret som står på baksiden av bankkortet.</button>
+        </div>
+        <div class="mq-svar" aria-live="polite"></div>
+      </div>
+
+      <div class="modul-knapper">
+        <button type="button" class="knapp knapp-stor knapp-sekundar" data-forrige>← Tilbake</button>
+        <button type="button" class="knapp knapp-stor" data-neste>Neste: Huskeregelen →</button>
+      </div>
+    </section>
+
+    <!-- ===================== MODUL 5 ===================== -->
+    <section class="modul" data-modul="5" aria-labelledby="m5-tittel" hidden>
+      <p class="overtittel">Modul 5 av 5</p>
+      <h2 id="m5-tittel">Huskeregelen: Stopp – Sjekk – Spør</h2>
+      <p>Du trenger ikke huske alt. Bruk disse tre stegene hver gang du skal handle på nett eller får en melding om penger.</p>
+
+      <ol class="huskeregel">
+        <li>
+          <span class="ikon" aria-hidden="true">✋</span>
+          <h3>Stopp</h3>
+          <p>Ta en pause. Ingen ekte butikk eller bank krever at du handler i løpet av minutter. Blir du stresset eller ivrig, er det et faresignal.</p>
+        </li>
+        <li>
+          <span class="ikon" aria-hidden="true">🔍</span>
+          <h3>Sjekk</h3>
+          <p>Les nettadressen. Søk opp butikknavnet sammen med ordet «svindel». Sjekk org.nr. og les anmeldelser. Se etter adresse og telefon.</p>
+        </li>
+        <li>
+          <span class="ikon" aria-hidden="true">💬</span>
+          <h3>Spør</h3>
+          <p>Spør barn, barnebarn, en venn eller banken før du betaler. Det er aldri dumt å spørre.</p>
+        </li>
+      </ol>
+
+      <h3>Nyttige verktøy</h3>
+      <ul class="lenkeliste">
+        <li>
+          <a href="https://www.brreg.no" target="_blank" rel="noopener">Brønnøysundregistrene (brreg.no)</a>
+          <p>Skriv inn organisasjonsnummeret og se om firmaet finnes – og hvor lenge det har eksistert. Et firma som er noen få uker gammelt, bør du være forsiktig med.</p>
+        </li>
+        <li>
+          <a href="https://www.trustpilot.com" target="_blank" rel="noopener">Trustpilot</a>
+          <p>Les hva andre kunder skriver. Se særlig på de dårlige anmeldelsene.</p>
+        </li>
+        <li>
+          <a href="https://www.forbrukerradet.no" target="_blank" rel="noopener">Forbrukerrådet</a>
+          <p>Råd om netthandel og hvilke rettigheter du har.</p>
+        </li>
+      </ul>
+
+      <div class="kort ok-kort">
+        <h3>💳 Betal helst med kredittkort</h3>
+        <p>Når du handler på nett, gir kredittkort deg sterkere rettigheter til å få pengene tilbake hvis varen aldri kommer.</p>
+      </div>
+
+      <div class="kort">
+        <h3>Du er ferdig med læringsarenaen! 🎉</h3>
+        <p>Nå er du klar for en ny test. Den er litt lettere – og denne gangen får du forklaring etter hver oppgave.</p>
+        <a class="knapp knapp-stor" href="ny-test.html">Ta den nye testen →</a>
+      </div>
+
+      <div class="modul-knapper">
+        <button type="button" class="knapp knapp-stor knapp-sekundar" data-forrige>← Tilbake</button>
+        <span></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bunn">
+    <div class="bunn-innhold">
+      <p><b>Senior vs Svindel</b> er laget av gruppe 12 i DCST1002 ved NTNU, 2026.</p>
+      <p>Alle butikker, banker og firmaer i eksemplene er oppdiktet. De er laget for å vise hvordan ekte svindel ser ut.</p>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+  <script src="js/sporsmal.js"></script>
+  <script src="js/laering.js"></script>
+</body>
+</html>

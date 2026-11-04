@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senior vs Svindel</title>
+  <meta name="description" content="Lær å kjenne igjen falske nettbutikker, KI-bilder og svindelmeldinger.">
+  <script>try { document.documentElement.dataset.tekst = JSON.parse(localStorage.getItem('svs-tekst')) || 'normal'; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+  <a class="hopp" href="#hovedinnhold">Hopp til innholdet</a>
+  <header class="topp">
+    <div class="topp-innhold">
+      <a class="logo" href="index.html"><span aria-hidden="true">🛡️</span> Senior vs Svindel</a>
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html">Forside</a>
+        <a href="test.html">Test deg selv</a>
+        <a href="laering.html">Læringsarenaen</a>
+        <a href="hjelp.html">Få hjelp</a>
+      </nav>
+      <div class="tekststorrelse" role="group" aria-label="Tekststørrelse">
+        <span>Tekst:</span>
+        <button type="button" data-tekstknapp="normal" aria-label="Vanlig tekst">A</button>
+        <button type="button" data-tekstknapp="stor" aria-label="Stor tekst">A+</button>
+        <button type="button" data-tekstknapp="storst" aria-label="Største tekst">A++</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="innhold" id="hovedinnhold">
+    <section class="helt">
+      <h1>Ville du oppdaget svindelen?</h1>
+      <p class="ingress">
+        Svindlere bruker i dag kunstig intelligens (KI) til å lage falske nettbutikker, bilder og meldinger
+        som ser helt ekte ut. Test deg selv – det tar omtrent fem minutter.
+      </p>
+      <div class="knapperad">
+        <a class="knapp knapp-stor" href="test.html">Start testen →</a>
+      </div>
+      <div id="velkommen-tilbake" class="kort ok-kort" hidden></div>
+    </section>
+
+    <h2>Svindel kan ramme hvem som helst</h2>
+    <div class="tall-rad">
+      <div class="tall-kort">
+        <span class="tall">1 av 4</span>
+        <p>eldre har opplevd digital svindel.</p>
+        <p class="kilde">Norsk Regnesentral, Pensjonistforbundet og Concipio (Forskning.no, 2025)</p>
+      </div>
+      <div class="tall-kort">
+        <span class="tall">6 av 10</span>
+        <p>eldre er ikke redde for å bli svindlet – de mener de vet nok til å unngå det.</p>
+        <p class="kilde">Nordea, 2024</p>
+      </div>
+      <div class="tall-kort">
+        <span class="tall">80–90 %</span>
+        <p>av Nordeas kunder som blir svindlet, er over 60 år.</p>
+        <p class="kilde">Nordea, 2024</p>
+      </div>
+    </div>
+
+    <h2>Slik fungerer det</h2>
+    <ol class="steg-rad">
+      <li>
+        <h3>Test deg selv</h3>
+        <p>Er nettsidene, meldingene og bildene ekte eller svindel? Testen er vanskelig – akkurat som virkeligheten.</p>
+      </li>
+      <li>
+        <h3>Læringsarenaen</h3>
+        <p>Lær tegnene du skal se etter, i ditt eget tempo. Du øver på eksempler underveis.</p>
+      </li>
+      <li>
+        <h3>Ny test</h3>
+        <p>Prøv igjen og se hvor mye flinkere du har blitt.</p>
+      </li>
+    </ol>
+
+    <div class="kort varsel-kort">
+      <h3>Tror du at du allerede er svindlet?</h3>
+      <p>Ring banken din med en gang, og les hva du kan gjøre. <a href="hjelp.html">Gå til «Få hjelp»</a></p>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <div class="bunn-innhold">
+      <p><b>Senior vs Svindel</b> er laget av gruppe 12 i DCST1002 ved NTNU, 2026.</p>
+      <p>Alle butikker, banker og firmaer i eksemplene er oppdiktet. De er laget for å vise hvordan ekte svindel ser ut.</p>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+  <script>
+    // Vis fremgang hvis brukeren har vært her før
+    (function () {
+      const t1 = Lagring.hent('test1', null);
+      const t2 = Lagring.hent('test2', null);
+      const boks = document.getElementById('velkommen-tilbake');
+      if (!t1) return;
+      boks.hidden = false;
+      if (t2) {
+        boks.innerHTML = `<p><b>Velkommen tilbake!</b> På første test fikk du ${t1.riktige} av ${t1.antall} riktige. På den nye testen fikk du ${t2.riktige} av ${t2.antall}.</p>
+          <a href="laering.html">Repeter læringsarenaen</a>`;
+      } else {
+        boks.innerHTML = `<p><b>Velkommen tilbake!</b> På første test fikk du ${t1.riktige} av ${t1.antall} riktige.</p>
+          <a class="knapp" href="laering.html">Fortsett til læringsarenaen →</a>`;
+      }
+    })();
+  </script>
+</body>
+</html>

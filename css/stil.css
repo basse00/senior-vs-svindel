@@ -1,0 +1,419 @@
+/* =========================================================
+   Senior vs Svindel – felles stil for hele nettsiden
+   Laget for eldre brukere: stor tekst, høy kontrast, store knapper.
+   ========================================================= */
+
+:root {
+  --bakgrunn: #f7f5f0;
+  --flate: #ffffff;
+  --tekst: #1b1f24;
+  --dempet: #4a525c;
+  --hoved: #1f3d6b;
+  --hoved-mork: #142a4b;
+  --hoved-lys: #e4ebf5;
+  --fare: #b3261e;
+  --fare-mork: #8c1d17;
+  --fare-lys: #fbe9e7;
+  --ok: #1d6f3a;
+  --ok-mork: #15542b;
+  --ok-lys: #e3f3e8;
+  --varsel: #7a5000;
+  --varsel-lys: #fff4d6;
+  --kant: #d5d0c4;
+  --fokus: #f2b705;
+  --radius: 14px;
+  --skygge: 0 2px 10px rgba(20, 30, 50, 0.08);
+}
+
+/* Tekststørrelse styres av knappene A / A+ / A++ */
+html { font-size: 125%; } /* 20 px */
+html[data-tekst="stor"] { font-size: 140%; }
+html[data-tekst="storst"] { font-size: 160%; }
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: var(--bakgrunn);
+  color: var(--tekst);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; }
+a { color: var(--hoved); }
+:focus-visible { outline: 4px solid var(--fokus); outline-offset: 3px; }
+
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 0.75rem; color: var(--hoved-mork); }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 2rem 0 0.75rem; color: var(--hoved-mork); }
+h3 { font-size: 1.15rem; line-height: 1.3; margin: 1.25rem 0 0.5rem; }
+p { margin: 0 0 1rem; }
+
+.hopp {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--fokus); color: #000; padding: 0.5rem 1rem; z-index: 10;
+}
+.hopp:focus { left: 0; }
+
+/* ---------- Toppmeny ---------- */
+.topp { background: var(--hoved); color: #fff; }
+.topp-innhold {
+  max-width: 1100px; margin: 0 auto; padding: 0.6rem 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem;
+}
+.logo {
+  color: #fff; font-weight: 700; font-size: 1.2rem; text-decoration: none;
+  display: flex; gap: 0.4rem; align-items: center;
+}
+.hovedmeny { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-left: auto; }
+.hovedmeny a {
+  color: #fff; text-decoration: none; padding: 0.4rem 0.7rem; border-radius: 8px; font-size: 0.9rem;
+}
+.hovedmeny a:hover { background: rgba(255, 255, 255, 0.15); }
+.hovedmeny a[aria-current="page"] { background: rgba(255, 255, 255, 0.2); text-decoration: underline; text-underline-offset: 4px; }
+.tekststorrelse { display: flex; gap: 0.3rem; align-items: center; font-size: 0.8rem; }
+.tekststorrelse button {
+  font: inherit; font-weight: 700; min-width: 2.4rem; min-height: 2.2rem;
+  border: 2px solid #fff; background: transparent; color: #fff; border-radius: 8px; cursor: pointer;
+}
+.tekststorrelse button[aria-pressed="true"] { background: #fff; color: var(--hoved); }
+
+/* ---------- Innhold ---------- */
+.innhold { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.smal { max-width: 780px; margin-left: auto; margin-right: auto; }
+.ingress { font-size: 1.15rem; color: var(--dempet); max-width: 40em; }
+.overtittel {
+  text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; font-weight: 700;
+  color: var(--hoved); margin-bottom: 0.3rem;
+}
+
+.kort {
+  background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius);
+  padding: 1.25rem 1.5rem; box-shadow: var(--skygge); margin: 1.25rem 0;
+}
+.kort > :last-child { margin-bottom: 0; }
+.kort h2:first-child, .kort h3:first-child { margin-top: 0; }
+.varsel-kort { background: var(--varsel-lys); border-color: #e9cf8a; }
+.fare-kort { background: var(--fare-lys); border-color: #eab5ae; }
+.ok-kort { background: var(--ok-lys); border-color: #a9d6b8; }
+
+/* ---------- Knapper ---------- */
+.knapp {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3rem; padding: 0.7rem 1.4rem;
+  font: inherit; font-weight: 700; line-height: 1.25; text-align: center;
+  border-radius: 12px; border: 2px solid var(--hoved);
+  background: var(--hoved); color: #fff; text-decoration: none; cursor: pointer;
+}
+.knapp:hover { background: var(--hoved-mork); border-color: var(--hoved-mork); }
+.knapp:disabled { cursor: default; opacity: 0.55; }
+.knapp-stor { font-size: 1.1rem; padding: 0.9rem 2rem; min-height: 3.6rem; }
+.knapp-sekundar { background: var(--flate); color: var(--hoved); }
+.knapp-sekundar:hover { background: var(--hoved-lys); color: var(--hoved-mork); }
+.svar-ekte { background: var(--ok); border-color: var(--ok); }
+.svar-ekte:hover { background: var(--ok-mork); border-color: var(--ok-mork); }
+.svar-svindel { background: var(--fare); border-color: var(--fare); }
+.svar-svindel:hover { background: var(--fare-mork); border-color: var(--fare-mork); }
+.knapperad { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+
+/* ---------- Forside ---------- */
+.helt { padding: 2.5rem 0 1rem; }
+.helt h1 { font-size: 2.6rem; max-width: 16em; }
+.helt .ingress { font-size: 1.25rem; }
+.tall-rad { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 2rem 0; }
+.tall-kort { background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1.25rem 1.5rem; box-shadow: var(--skygge); }
+.tall-kort .tall { font-size: 2.4rem; font-weight: 700; color: var(--fare); line-height: 1.1; display: block; }
+.tall-kort p { margin: 0.4rem 0 0.5rem; }
+.tall-kort .kilde { font-size: 0.75rem; color: var(--dempet); margin: 0; }
+.steg-rad { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; counter-reset: steg; padding: 0; list-style: none; }
+.steg-rad li { background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1.25rem 1.5rem; position: relative; }
+.steg-rad li::before {
+  counter-increment: steg; content: counter(steg);
+  display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  background: var(--hoved); color: #fff; font-weight: 700; margin-bottom: 0.5rem;
+}
+.steg-rad h3 { margin-top: 0; }
+.steg-rad p { margin: 0; }
+
+/* ---------- Test ---------- */
+.test-topp { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-weight: 700; }
+.fremdrift { height: 0.6rem; background: var(--hoved-lys); border-radius: 99px; overflow: hidden; }
+.fremdrift > span { display: block; height: 100%; background: var(--hoved); transition: width 0.3s; }
+.tidtaker { color: var(--dempet); font-variant-numeric: tabular-nums; }
+.tidtaker.lite-tid { color: var(--fare); }
+.tidslinje { height: 0.35rem; background: #eee6d8; border-radius: 99px; overflow: hidden; margin-top: 0.4rem; }
+.tidslinje > span { display: block; height: 100%; background: var(--varsel); transition: width 1s linear; }
+.tidslinje.lite-tid > span { background: var(--fare); }
+.sporsmal-tekst { font-size: 1.4rem; margin: 1.25rem 0 1rem; }
+.oppgave { margin: 0 0 1.25rem; }
+
+.svarknapper {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  position: sticky; bottom: 0; padding: 1rem 0;
+  background: linear-gradient(to bottom, rgba(247, 245, 240, 0), var(--bakgrunn) 25%);
+}
+.svarknapper.valg-liste { grid-template-columns: 1fr; position: static; background: none; }
+.knapp-valg {
+  background: var(--flate); color: var(--tekst); border-color: var(--kant);
+  justify-content: flex-start; text-align: left; font-weight: 400;
+}
+.knapp-valg:hover { background: var(--hoved-lys); border-color: var(--hoved); color: var(--tekst); }
+.knapp-valg.valgt { border-color: var(--hoved); border-width: 3px; }
+.knapp-valg.er-riktig { background: var(--ok-lys); border-color: var(--ok); }
+.knapp-valg:disabled { opacity: 1; }
+
+.sikkerhet { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin: 1rem 0 1.5rem; }
+.sikkerhet button {
+  font: inherit; font-size: 0.85rem; min-height: 4.2rem; padding: 0.5rem 0.3rem;
+  border: 2px solid var(--kant); background: var(--flate); color: var(--tekst); border-radius: 12px; cursor: pointer; line-height: 1.2;
+}
+.sikkerhet button b { display: block; font-size: 1.3rem; }
+.sikkerhet button[aria-pressed="true"] { border-color: var(--hoved); background: var(--hoved); color: #fff; }
+
+.tilbakemelding { border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1rem 0; border: 3px solid; }
+.tilbakemelding.riktig { background: var(--ok-lys); border-color: var(--ok); }
+.tilbakemelding.feil { background: var(--fare-lys); border-color: var(--fare); }
+.tb-tittel { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+.resultat h1 { font-size: 2.2rem; }
+.poeng-stor { font-size: 4.5rem; font-weight: 700; line-height: 1; margin: 0.5rem 0 1rem; }
+.poeng-stor span { font-size: 2rem; color: var(--dempet); }
+.poeng-stor.fare { color: var(--fare); }
+.poeng-stor.ok { color: var(--ok); }
+.sammenligning { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.sammenligning div { background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1rem; text-align: center; }
+.sammenligning span { display: block; color: var(--dempet); }
+.sammenligning b { font-size: 2.2rem; }
+.sammenligning .naa b { color: var(--ok); }
+
+.fasit { margin: 2rem 0; background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1rem 1.5rem; }
+.fasit summary { cursor: pointer; font-weight: 700; font-size: 1.1rem; min-height: 2.5rem; display: flex; align-items: center; }
+.fasit ol { padding-left: 1.5rem; }
+.fasit li { margin: 1rem 0; padding-left: 0.25rem; }
+.fasit li p { margin: 0.3rem 0 0; color: var(--dempet); }
+.fasit .merke-riktig { color: var(--ok); font-weight: 700; }
+.fasit .merke-feil { color: var(--fare); font-weight: 700; }
+
+.sjekkliste { padding-left: 0; list-style: none; }
+.sjekkliste li { padding-left: 2rem; position: relative; margin: 0.4rem 0; }
+.sjekkliste li::before { content: "✔"; position: absolute; left: 0.3rem; color: var(--ok); font-weight: 700; }
+
+/* ---------- Læringsarenaen ---------- */
+.steg-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; scroll-margin-top: 1rem; }
+.steg-nav button {
+  font: inherit; font-size: 0.85rem; padding: 0.5rem 0.9rem; min-height: 2.6rem;
+  border-radius: 99px; border: 2px solid var(--hoved); background: var(--flate); color: var(--hoved); cursor: pointer;
+}
+.steg-nav button[aria-current="step"] { background: var(--hoved); color: #fff; }
+.steg-nav button.ferdig::before { content: "✓ "; font-weight: 700; }
+.modul h2:first-of-type { margin-top: 0.3rem; font-size: 1.9rem; }
+.oppgavetekst { background: var(--hoved-lys); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.modul-knapper { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--kant); }
+
+.finn-status-linje {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--flate); border: 2px solid var(--hoved); border-radius: var(--radius);
+  padding: 0.7rem 1rem; margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem;
+}
+.finn-teller { font-weight: 700; color: var(--hoved); }
+.finn-status.ok { color: var(--ok); }
+.finn-rutenett { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 1.5rem; align-items: start; }
+.finn-omrade { cursor: pointer; }
+.finn-omrade [data-funn] { border-radius: 6px; transition: box-shadow 0.2s; }
+.finn-omrade [data-funn].funnet { box-shadow: 0 0 0 3px var(--ok), 0 0 0 7px rgba(29, 111, 58, 0.25); }
+.finn-panel { background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.finn-panel h3 { margin-top: 0; }
+.funn-liste { padding-left: 1.4rem; margin: 0 0 1rem; }
+.funn-liste li { margin: 0.6rem 0; padding: 0.3rem 0.4rem; border-radius: 8px; transition: background-color 0.4s; }
+.funn-liste li .funnet-tekst { display: none; }
+.funn-liste li.vist .funnet-tekst { display: block; }
+.funn-liste li.vist .ikke-funnet { display: none; }
+.funn-liste li .ikke-funnet { color: var(--dempet); }
+.funn-liste li.blink { background: var(--ok-lys); }
+
+.url-eksempel { background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1rem 0; }
+.url-linje { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.05rem; word-break: break-all; line-height: 1.8; }
+.del-dempet { color: #7b828b; }
+.del-eier { background: #c9ecd4; color: #0d4421; font-weight: 700; padding: 0.1rem 0.3rem; border-radius: 4px; }
+.del-eier.falsk { background: #f6cbc5; color: #6d130e; }
+.url-merknad { margin: 0.5rem 0 0; }
+.regel { counter-reset: regel; list-style: none; padding: 0; }
+.regel li { position: relative; padding-left: 2.8rem; margin: 0.8rem 0; min-height: 2rem; }
+.regel li::before {
+  counter-increment: regel; content: counter(regel);
+  position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--hoved); color: #fff; font-weight: 700; display: grid; place-items: center;
+}
+
+.adresse-oppgaver { display: grid; gap: 1rem; margin: 1rem 0; }
+.adresse-oppgave { background: var(--flate); border: 2px solid var(--kant); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.adresse-oppgave.riktig { border-color: var(--ok); background: var(--ok-lys); }
+.adresse-oppgave.feil { border-color: var(--fare); background: var(--fare-lys); }
+.adresse-tekst { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1rem; word-break: break-all; margin-bottom: 0.75rem; }
+.adresse-tekst mark { background: #fff1a8; padding: 0.05rem 0.2rem; border-radius: 4px; font-weight: 700; }
+.adresse-knapper { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.adresse-knapper .knapp.valgt:disabled { opacity: 1; box-shadow: 0 0 0 3px var(--tekst); }
+.adresse-svar:not(:empty) { margin-top: 0.75rem; }
+
+.tips-rutenett { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.tips-kort { background: var(--flate); border: 2px solid var(--kant); border-radius: var(--radius); padding: 0; }
+.tips-kort[open] { border-color: var(--hoved); }
+.tips-kort summary {
+  cursor: pointer; padding: 1rem 1.25rem; font-weight: 700; font-size: 1.05rem;
+  display: flex; align-items: center; gap: 0.6rem; list-style: none; min-height: 3.5rem;
+}
+.tips-kort summary::-webkit-details-marker { display: none; }
+.tips-kort summary::after { content: "+"; margin-left: auto; font-size: 1.5rem; color: var(--hoved); }
+.tips-kort[open] summary::after { content: "–"; }
+.tips-kort summary .ikon { font-size: 1.6rem; }
+.tips-kort p { padding: 0 1.25rem 1rem; margin: 0; }
+
+.bildepar { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.bildepar button { padding: 0; border: 3px solid var(--kant); border-radius: var(--radius); overflow: hidden; background: var(--flate); cursor: pointer; font: inherit; }
+.bildepar button img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.bildepar button span { display: block; padding: 0.5rem; font-weight: 700; }
+.bildepar button.er-ki { border-color: var(--fare); }
+.bildepar button.er-ekte { border-color: var(--ok); }
+
+.miniquiz { background: var(--flate); border: 2px solid var(--hoved); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+.miniquiz .mq-etikett { font-weight: 700; color: var(--hoved); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; margin-bottom: 0.3rem; }
+.miniquiz .mq-sporsmal { font-weight: 700; font-size: 1.1rem; }
+.miniquiz .mq-valg { display: grid; gap: 0.6rem; }
+.mq-svar:not(:empty) { margin-top: 1rem; padding: 1rem 1.25rem; border-radius: 12px; }
+.mq-svar.riktig { background: var(--ok-lys); border: 2px solid var(--ok); }
+.mq-svar.feil { background: var(--fare-lys); border: 2px solid var(--fare); }
+
+.huskeregel { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1rem 0; padding: 0; list-style: none; }
+.huskeregel li { background: var(--flate); border: 1px solid var(--kant); border-top: 8px solid var(--hoved); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+.huskeregel li:nth-child(1) { border-top-color: var(--fare); }
+.huskeregel li:nth-child(2) { border-top-color: var(--varsel); }
+.huskeregel li:nth-child(3) { border-top-color: var(--ok); }
+.huskeregel h3 { margin-top: 0; font-size: 1.4rem; }
+.huskeregel .ikon { font-size: 2rem; display: block; }
+
+.lenkeliste { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+.lenkeliste li { background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.lenkeliste a { font-weight: 700; font-size: 1.05rem; }
+.lenkeliste p { margin: 0.2rem 0 0; color: var(--dempet); }
+
+/* ---------- Hjelp ---------- */
+.telefonnummer { font-size: 2rem; font-weight: 700; color: var(--hoved-mork); display: block; }
+.hjelp-steg { counter-reset: hsteg; list-style: none; padding: 0; }
+.hjelp-steg > li { position: relative; padding: 1.25rem 1.5rem 1.25rem 4.5rem; background: var(--flate); border: 1px solid var(--kant); border-radius: var(--radius); margin: 1rem 0; }
+.hjelp-steg > li::before {
+  counter-increment: hsteg; content: counter(hsteg);
+  position: absolute; left: 1.25rem; top: 1.25rem; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  background: var(--fare); color: #fff; font-weight: 700; display: grid; place-items: center;
+}
+.hjelp-steg h3 { margin-top: 0; }
+.hjelp-steg p:last-child { margin-bottom: 0; }
+
+/* ---------- Bunn ---------- */
+.bunn { background: #e9e5dc; border-top: 1px solid var(--kant); font-size: 0.85rem; color: var(--dempet); }
+.bunn-innhold { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
+.bunn p { margin: 0.3rem 0; }
+
+/* =========================================================
+   Eksempler: falske og ekte nettsider, meldinger og bilder
+   (vises i testene og i læringsarenaen)
+   ========================================================= */
+
+.nettleser {
+  margin: 0; border: 1px solid #b9b4a8; border-radius: 12px; overflow: hidden;
+  background: #fff; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+.nettleser-topp { background: #e9e7e2; padding: 0.5rem 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+.prikker { display: flex; gap: 6px; flex-shrink: 0; }
+.prikker i { width: 12px; height: 12px; border-radius: 50%; background: #c9c5bc; display: block; }
+.adressefelt {
+  flex: 1; min-width: 0; background: #fff; border-radius: 99px; padding: 0.35rem 0.9rem;
+  font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.8rem; line-height: 1.4;
+  display: flex; gap: 0.4rem; align-items: center; border: 1px solid #d6d2c9;
+}
+.adressefelt .url { word-break: break-all; }
+.ikke-sikker { color: var(--fare); font-family: system-ui, sans-serif; font-weight: 700; white-space: nowrap; }
+
+/* Nettbutikk-mal */
+.butikk { --merke: #333; font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 0.85rem; color: #222; line-height: 1.45; }
+.b-toppstripe { background: var(--merke); color: #fff; text-align: center; padding: 0.35rem 0.5rem; font-size: 0.75rem; }
+.b-topp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; padding: 0.8rem 1rem; border-bottom: 1px solid #eee; }
+.b-logo { font-weight: 800; font-size: 1.2rem; color: var(--merke); line-height: 1.1; }
+.b-logo small { display: block; font-weight: 400; font-size: 0.65rem; color: #777; letter-spacing: 0.05em; }
+.b-meny { display: flex; flex-wrap: wrap; gap: 0.9rem; color: #444; font-size: 0.8rem; }
+.b-kurv { margin-left: auto; }
+.b-banner { background: #f4f4f4; background: linear-gradient(135deg, color-mix(in srgb, var(--merke) 14%, #fff), #fff); padding: 1.2rem 1rem; }
+.b-banner h3 { margin: 0 0 0.3rem; font-size: 1.25rem; color: var(--merke); }
+.b-banner p { margin: 0; }
+.b-nedtelling { display: inline-block; margin-top: 0.6rem; background: #111; color: #fff; padding: 0.3rem 0.7rem; border-radius: 6px; font-weight: 700; }
+.b-vurdering { padding: 0.5rem 1rem; font-size: 0.8rem; color: #333; background: #fafafa; border-bottom: 1px solid #eee; }
+.b-vurdering .stjerner { color: #e0a100; letter-spacing: 1px; }
+.b-produkter { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; padding: 1rem; }
+.b-produkt { border: 1px solid #eee; border-radius: 8px; padding: 0.6rem; position: relative; }
+.b-bilde { aspect-ratio: 4 / 3; display: grid; place-items: center; font-size: 2.6rem; border-radius: 6px; margin-bottom: 0.4rem; background: #eee; }
+.b-bilde img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.b-pnavn { font-size: 0.8rem; }
+.b-pris s { color: #888; font-size: 0.75rem; }
+.b-pris b { font-size: 1rem; color: #111; }
+.b-pris .tilbud { color: #c00; }
+.b-merke { position: absolute; top: 0.4rem; left: 0.4rem; background: #c00; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 4px; }
+.b-bunn { background: #f3f3f3; padding: 0.9rem 1rem; font-size: 0.75rem; color: #444; display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; justify-content: space-between; }
+.b-betal { display: inline-block; border: 1px solid #ccc; background: #fff; border-radius: 4px; padding: 0.1rem 0.4rem; margin: 0.15rem 0.25rem 0 0; font-weight: 700; font-size: 0.7rem; }
+
+/* Bank-innlogging */
+.bank { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 0.85rem; background: #f2f5f9; color: #1c2430; }
+.bank-topp { background: #0d2c54; color: #fff; padding: 0.8rem 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.bank-logo { font-weight: 800; font-size: 1.15rem; }
+.bank-varsel { background: #fff3cd; color: #6b4d00; border-bottom: 1px solid #f0d78a; padding: 0.6rem 1rem; font-weight: 600; }
+.bank-boks { background: #fff; max-width: 360px; margin: 1.25rem auto; padding: 1.2rem 1.3rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); }
+.bank-boks h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.falsk-felt-etikett { font-size: 0.75rem; margin: 0.6rem 0 0.2rem; color: #333; }
+.falsk-felt { height: 2.1rem; border: 1px solid #aab; border-radius: 6px; background: #fff; }
+.falsk-knapp { margin-top: 1rem; background: #0d2c54; color: #fff; text-align: center; padding: 0.6rem; border-radius: 6px; font-weight: 700; }
+.bank-bunn { text-align: center; font-size: 0.7rem; color: #667; padding: 0.5rem 1rem 1rem; }
+
+/* Mobil med SMS */
+.telefon { max-width: 380px; margin: 0 auto; background: #1a1a1a; border-radius: 36px; padding: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); }
+.t-skjerm { background: #fff; border-radius: 26px; overflow: hidden; min-height: 400px; display: flex; flex-direction: column; font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+.t-topp { text-align: center; padding: 1rem 0.75rem 0.6rem; border-bottom: 1px solid #eee; background: #f7f7f7; }
+.t-avatar { width: 44px; height: 44px; border-radius: 50%; background: #9aa3ad; color: #fff; display: grid; place-items: center; margin: 0 auto 0.3rem; font-weight: 700; }
+.t-avsender { font-weight: 700; display: inline-block; padding: 0 0.3rem; }
+.t-under { font-size: 0.7rem; color: #777; }
+.t-meldinger { padding: 1rem 0.8rem; flex: 1; }
+.t-tid { text-align: center; font-size: 0.7rem; color: #888; margin-bottom: 0.6rem; }
+.t-boble { background: #e9e9eb; border-radius: 18px; padding: 0.6rem 0.9rem; max-width: 90%; font-size: 0.85rem; line-height: 1.5; overflow-wrap: anywhere; }
+.lenke { color: #0a66d8; text-decoration: underline; overflow-wrap: anywhere; }
+
+/* E-post */
+.epost { background: #fff; border: 1px solid #c9c5bc; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 0.85rem; color: #222; }
+.e-verktoy { background: #eef1f5; padding: 0.5rem 1rem; font-size: 0.75rem; color: #555; }
+.e-hode { padding: 0.9rem 1.1rem; border-bottom: 1px solid #eee; }
+.e-emne { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+.e-fra { color: #333; overflow-wrap: anywhere; }
+.e-fra .adresse { color: #666; }
+.e-tekst { padding: 1rem 1.1rem 1.4rem; }
+.e-tekst p { margin: 0 0 0.8rem; }
+.e-logo { font-weight: 800; font-size: 1.1rem; }
+.e-knapp { display: inline-block; background: #d4351c; color: #fff; padding: 0.55rem 1.1rem; border-radius: 6px; font-weight: 700; }
+
+/* Bildeoppgave */
+.bildeoppgave { margin: 0; text-align: center; }
+.bildeoppgave img { max-height: 65vh; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); }
+
+/* ---------- Mobil ---------- */
+@media (max-width: 760px) {
+  html { font-size: 112.5%; }
+  html[data-tekst="stor"] { font-size: 125%; }
+  html[data-tekst="storst"] { font-size: 140%; }
+  h1, .helt h1 { font-size: 1.8rem; }
+  .hovedmeny { margin-left: 0; width: 100%; }
+  .prikker { display: none; }
+  .finn-rutenett { grid-template-columns: 1fr; }
+  .sikkerhet { grid-template-columns: 1fr; }
+  .sikkerhet button { min-height: 3rem; display: flex; gap: 0.75rem; align-items: center; padding: 0.5rem 1rem; text-align: left; }
+  .sikkerhet button b { font-size: 1.1rem; }
+  .svarknapper { gap: 0.6rem; }
+  .svarknapper .knapp-stor { padding: 0.8rem 0.6rem; }
+  .bildepar { grid-template-columns: 1fr; }
+  .poeng-stor { font-size: 3.5rem; }
+}

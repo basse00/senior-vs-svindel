@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test deg selv – Senior vs Svindel</title>
+  <script>try { document.documentElement.dataset.tekst = JSON.parse(localStorage.getItem('svs-tekst')) || 'normal'; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+  <a class="hopp" href="#test">Hopp til innholdet</a>
+  <header class="topp">
+    <div class="topp-innhold">
+      <a class="logo" href="index.html"><span aria-hidden="true">🛡️</span> Senior vs Svindel</a>
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html">Forside</a>
+        <a href="test.html">Test deg selv</a>
+        <a href="laering.html">Læringsarenaen</a>
+        <a href="hjelp.html">Få hjelp</a>
+      </nav>
+      <div class="tekststorrelse" role="group" aria-label="Tekststørrelse">
+        <span>Tekst:</span>
+        <button type="button" data-tekstknapp="normal" aria-label="Vanlig tekst">A</button>
+        <button type="button" data-tekstknapp="stor" aria-label="Stor tekst">A+</button>
+        <button type="button" data-tekstknapp="storst" aria-label="Største tekst">A++</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="innhold" id="test">
+    <p>Laster testen …</p>
+  </main>
+
+  <footer class="bunn">
+    <div class="bunn-innhold">
+      <p><b>Senior vs Svindel</b> er laget av gruppe 12 i DCST1002 ved NTNU, 2026.</p>
+      <p>Alle butikker, banker og firmaer i eksemplene er oppdiktet. De er laget for å vise hvordan ekte svindel ser ut.</p>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+  <script src="js/sporsmal.js"></script>
+  <script src="js/test.js"></script>
+</body>
+</html>

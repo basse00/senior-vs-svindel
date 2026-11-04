@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Få hjelp – Senior vs Svindel</title>
+  <script>try { document.documentElement.dataset.tekst = JSON.parse(localStorage.getItem('svs-tekst')) || 'normal'; } catch (e) {}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+  <a class="hopp" href="#hovedinnhold">Hopp til innholdet</a>
+  <header class="topp">
+    <div class="topp-innhold">
+      <a class="logo" href="index.html"><span aria-hidden="true">🛡️</span> Senior vs Svindel</a>
+      <nav class="hovedmeny" aria-label="Hovedmeny">
+        <a href="index.html">Forside</a>
+        <a href="test.html">Test deg selv</a>
+        <a href="laering.html">Læringsarenaen</a>
+        <a href="hjelp.html">Få hjelp</a>
+      </nav>
+      <div class="tekststorrelse" role="group" aria-label="Tekststørrelse">
+        <span>Tekst:</span>
+        <button type="button" data-tekstknapp="normal" aria-label="Vanlig tekst">A</button>
+        <button type="button" data-tekstknapp="stor" aria-label="Stor tekst">A+</button>
+        <button type="button" data-tekstknapp="storst" aria-label="Største tekst">A++</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="innhold smal" id="hovedinnhold">
+    <h1>Tror du at du er svindlet?</h1>
+    <p class="ingress">
+      Det er aldri flaut å bli lurt. Svindlerne er profesjonelle, og det kan skje med alle.
+      Det viktigste er å handle raskt.
+    </p>
+
+    <ol class="hjelp-steg">
+      <li>
+        <h3>Ring banken din med en gang</h3>
+        <p>Har du oppgitt kortnummer, BankID, kode eller passord? Ring banken og be dem sperre kortet og nettbanken.</p>
+        <p>Nummeret står på <b>baksiden av bankkortet</b> eller på bankens egen nettside. De fleste banker har døgnåpen sperretelefon.</p>
+      </li>
+      <li>
+        <h3>Ikke svar svindleren</h3>
+        <p>Ikke svar på meldinger eller telefoner fra dem. Svindlere prøver ofte igjen – noen ganger later de som om de er banken eller politiet som skal «hjelpe» deg.</p>
+      </li>
+      <li>
+        <h3>Anmeld til politiet</h3>
+        <p>Du kan anmelde svindel på <a href="https://www.politiet.no" target="_blank" rel="noopener">politiet.no</a> eller ved å ringe politiet:</p>
+        <span class="telefonnummer">02800</span>
+        <p>Er det fare for liv og helse, ring <b>112</b>.</p>
+      </li>
+      <li>
+        <h3>Snakk med noen du stoler på</h3>
+        <p>Fortell det til barn, barnebarn eller en venn. De kan hjelpe deg med å bytte passord og følge opp med banken.</p>
+      </li>
+    </ol>
+
+    <h2>Usikker på en nettbutikk eller melding?</h2>
+    <ul class="lenkeliste">
+      <li>
+        <a href="https://www.brreg.no" target="_blank" rel="noopener">Brønnøysundregistrene (brreg.no)</a>
+        <p>Søk opp organisasjonsnummeret og se om firmaet finnes, og hvor gammelt det er.</p>
+      </li>
+      <li>
+        <a href="https://www.trustpilot.com" target="_blank" rel="noopener">Trustpilot</a>
+        <p>Les hva andre kunder har skrevet om butikken. Se særlig på de dårlige anmeldelsene.</p>
+      </li>
+      <li>
+        <a href="https://www.forbrukerradet.no" target="_blank" rel="noopener">Forbrukerrådet</a>
+        <p>Råd om netthandel og dine rettigheter som kunde.</p>
+      </li>
+      <li>
+        <a href="https://nettvett.no" target="_blank" rel="noopener">Nettvett.no</a>
+        <p>Enkle råd om trygg bruk av internett.</p>
+      </li>
+      <li>
+        <a href="https://www.seniornett.no" target="_blank" rel="noopener">Seniornett Norge</a>
+        <p>Kurs og hjelp for seniorer som vil bli tryggere på data og internett.</p>
+      </li>
+    </ul>
+
+    <div class="kort">
+      <h3>Husk: Stopp – Sjekk – Spør</h3>
+      <p><b>Stopp</b> når noen har det travelt. <b>Sjekk</b> nettadressen og hvem som står bak. <b>Spør</b> noen du stoler på før du betaler.</p>
+      <a href="laering.html">Lær mer i læringsarenaen</a>
+    </div>
+  </main>
+
+  <footer class="bunn">
+    <div class="bunn-innhold">
+      <p><b>Senior vs Svindel</b> er laget av gruppe 12 i DCST1002 ved NTNU, 2026.</p>
+      <p>Alle butikker, banker og firmaer i eksemplene er oppdiktet. De er laget for å vise hvordan ekte svindel ser ut.</p>
+    </div>
+  </footer>
+
+  <script src="js/felles.js"></script>
+</body>
+</html>
