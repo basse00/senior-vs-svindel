@@ -60,7 +60,7 @@ const VANSKELIG_TEST = [
     src: 'bilder/test1-ki.jpg',
     alt: 'Bilde du skal vurdere',
     svar: 'ki',
-    forklaring: 'Dette bildet er laget av KI. (Gruppen: skriv her hva man kan se etter i akkurat dette bildet.)'
+    forklaring: 'Dette bildet er laget av KI, med Microsoft Designer. Det er nesten umulig å se, og det er poenget. Hodetelefonene ligner et ekte merkeprodukt, og KI kan kopiere både form og logo. Overflaten er helt jevn uten støv, riper eller fingermerker, og lyset er perfekt. Du kan ikke stole på at du ser forskjell. Sjekk heller hvem som selger varen, og om prisen er for god til å være sann.'
   },
   {
     type: 'nettside',
@@ -140,7 +140,7 @@ const VANSKELIG_TEST = [
     src: 'bilder/test1-ekte.jpg',
     alt: 'Bilde du skal vurdere',
     svar: 'ekte',
-    forklaring: 'Dette er et ekte foto. (Gruppen: skriv gjerne hvor bildet kommer fra.)'
+    forklaring: 'Dette er et ekte foto, tatt av Luke Peterson (Unsplash). Det er samme type hodetelefoner som KI-bildet i denne testen etterligner. Lyset og skyggene faller naturlig, og bakgrunnen er en vanlig fotovegg. Husk likevel: Svindlere stjeler ofte ekte bilder fra ekte butikker, så et ekte bilde betyr ikke at butikken er ekte.'
   },
   {
     type: 'nettside',
@@ -263,7 +263,7 @@ const LETT_TEST = [
     src: 'bilder/test2-ki.jpg',
     alt: 'Bilde du skal vurdere',
     svar: 'ki',
-    forklaring: 'Dette bildet er laget av KI. (Gruppen: skriv her hva man kan se etter i akkurat dette bildet.)'
+    forklaring: 'Dette bildet er laget av KI, med Microsoft Designer. Se på tastaturet: bokstavene står i feil rekkefølge, og noen taster har bokstaver eller ord som ikke hører hjemme der. Nederst på skjermen er det samme app-ikon (App Store) to ganger. KI er dårlig på tekst og små detaljer som skal stemme. Zoom inn på tekst, tastatur og merkelapper når du er usikker.'
   },
   {
     type: 'epost',
@@ -332,7 +332,7 @@ const LETT_TEST = [
     src: 'bilder/test2-ekte.jpg',
     alt: 'Bilde du skal vurdere',
     svar: 'ekte',
-    forklaring: 'Dette er et ekte foto. (Gruppen: skriv gjerne hvor bildet kommer fra.)'
+    forklaring: 'Dette er et ekte foto, tatt av James McKinven (Unsplash). Se på docken nederst på skjermen: Der er mange ulike, kjente app-ikoner, og ingen av dem står to ganger. Sammenlign med KI-bildet av laptopen, der samme ikon gikk igjen og tastaturet var rotete. Husk likevel at et ekte bilde ikke betyr at butikken er ekte.'
   },
   {
     type: 'valg',
@@ -358,11 +358,11 @@ const BILDE_PAR = [
   {
     ki: 'bilder/laering-ki-1.jpg',
     ekte: 'bilder/laering-ekte-1.jpg',
-    forklaring: 'Gruppen: skriv her hva som avslører KI-bildet (f.eks. hendene, teksten i bakgrunnen).'
+    forklaring: 'Jakken som er merket «Laget av KI», er laget med Microsoft Designer. Den har ingen tydelige feil, og logoen til et kjent merke er kopiert nesten perfekt. Det som skiller den fra et ekte foto, er at stoffet er helt glatt, uten folder, lo eller ujevne sømmer. Bilder av kjente merkevarer beviser ikke at varen er ekte.'
   },
   {
     ki: 'bilder/laering-ki-2.jpg',
     ekte: 'bilder/laering-ekte-2.jpg',
-    forklaring: 'Gruppen: skriv her hva som avslører KI-bildet.'
+    forklaring: 'Stolen som er merket «Laget av KI», er laget med Microsoft Designer. Den ser ut som et vanlig produktbilde i en stue, med plante og teppe. Legg merke til at alt er perfekt: ingen skygger som faller rart, ingen bruksmerker, og et rom som ser ut som en reklame. KI-bilder kan se helt riktige ut. Derfor må du sjekke butikken, ikke bare bildet.'
   }
 ];
