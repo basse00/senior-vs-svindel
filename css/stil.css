@@ -72,6 +72,7 @@ p { margin: 0 0 1rem; }
 }
 .hovedmeny a:hover { background: rgba(255, 255, 255, 0.15); }
 .hovedmeny a[aria-current="page"] { background: rgba(255, 255, 255, 0.2); text-decoration: underline; text-underline-offset: 4px; }
+.skjult { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .tekststorrelse { display: flex; gap: 0.3rem; align-items: center; font-size: 0.8rem; }
 .tekststorrelse button {
   font: inherit; font-weight: 700; min-width: 2.4rem; min-height: 2.2rem;
